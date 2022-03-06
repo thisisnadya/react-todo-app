@@ -13,4 +13,4 @@ Challenge: Create a todo app following given designs. Use Front-end libraries li
 
 Icon: https://google.github.io/material-design-icons/
 
-- Created with CodeSandbox
+Created with CodeSandbox
