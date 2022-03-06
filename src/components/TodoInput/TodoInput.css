@@ -1,0 +1,15 @@
+.filters li {
+  list-style-type: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+.filters li:hover {
+  color: darkgray;
+}
+.input {
+  border-radius: 12px;
+  width: 77%;
+}
+.btn {
+  border-radius: 12px;
+}
