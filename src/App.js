@@ -7,7 +7,7 @@ export default function App() {
   // states
   const [todoInput, setTodoInput] = useState("");
   const [todos, setTodos] = useState([]);
-  const [status, setStatus] = useState("all");
+  const [status, setStatus] = useState("All");
   const [filteredTodos, setFilteredTodos] = useState([]);
 
   useEffect(() => {
@@ -60,8 +60,14 @@ export default function App() {
         setTodos={setTodos}
         todos={todos}
         setStatus={setStatus}
+        status={status}
       />
-      <Todos todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
+      <Todos
+        todos={todos}
+        setTodos={setTodos}
+        filteredTodos={filteredTodos}
+        status={status}
+      />
     </div>
   );
 }

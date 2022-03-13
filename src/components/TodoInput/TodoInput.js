@@ -1,7 +1,14 @@
 import React from "react";
 import "./TodoInput.css";
 
-const TodoInput = ({ setTodoInput, todoInput, setTodos, todos, setStatus }) => {
+const TodoInput = ({
+  setTodoInput,
+  todoInput,
+  setTodos,
+  todos,
+  setStatus,
+  status
+}) => {
   const inputHandler = (e) => {
     setTodoInput(e.target.value);
   };
@@ -30,9 +37,11 @@ const TodoInput = ({ setTodoInput, todoInput, setTodos, todos, setStatus }) => {
           className="filters d-flex justify-content-evenly mt-4"
           onClick={statusHandler}
         >
-          <li>All</li>
-          <li>Active</li>
-          <li>Completed</li>
+          {["All", "Active", "Completed"].map((key) => (
+            <li key={key} className={key === status ? "selected" : ""}>
+              {key}
+            </li>
+          ))}
         </ul>
       </div>
       <hr />

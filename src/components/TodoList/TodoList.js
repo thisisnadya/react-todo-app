@@ -1,8 +1,8 @@
 import React from "react";
 import "./TodoList.css";
 
-const TodoList = ({ text, todos, setTodos, todo }) => {
-  const statusHandler = (e) => {
+const TodoList = ({ text, todos, setTodos, todo, status }) => {
+  const statusHandler = () => {
     setTodos(
       todos.map((item) => {
         if (item.id === todo.id) {
@@ -16,21 +16,31 @@ const TodoList = ({ text, todos, setTodos, todo }) => {
     );
   };
 
+  const deleteHandler = () => {
+    setTodos(todos.filter((el) => el.id !== todo.id));
+  };
+
   return (
-    <div className="form-check py-2">
-      <input
-        type="checkbox"
-        className="form-check-input"
-        onChange={statusHandler}
-      />
-      <label
-        htmlFor="flexCheckDefault"
-        className={`form-check-label todo-item ${
-          todo.completed ? "complete" : ""
-        }`}
-      >
-        {text}
-      </label>
+    <div>
+      <div className="form-check my-2">
+        <input
+          type="checkbox"
+          className="form-check-input"
+          onChange={statusHandler}
+          checked={todo.completed}
+        />
+        <label
+          htmlFor="flexCheckDefault"
+          className={`form-check-label todo-item ${
+            todo.completed ? "complete" : ""
+          }`}
+        >
+          {text}
+        </label>
+        <span className="material-icons text-right" onClick={deleteHandler}>
+          {status === "Completed" ? "delete" : ""}
+        </span>
+      </div>
     </div>
   );
 };

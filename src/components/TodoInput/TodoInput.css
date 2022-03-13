@@ -6,10 +6,16 @@
 .filters li:hover {
   color: darkgray;
 }
+.filters .active {
+  color: blue;
+}
 .input {
   border-radius: 12px;
   width: 77%;
 }
 .btn {
   border-radius: 12px;
+}
+.selected {
+  color: darkgray;
 }
