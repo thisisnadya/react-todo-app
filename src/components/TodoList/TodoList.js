@@ -20,6 +20,10 @@ const TodoList = ({ text, todos, setTodos, todo, status }) => {
     setTodos(todos.filter((el) => el.id !== todo.id));
   };
 
+  // const trashButton = () => {
+  //   return <span className="material-icons text-right">delete</span>;
+  // };
+
   return (
     <div>
       <div className="form-check my-2">
@@ -37,7 +41,8 @@ const TodoList = ({ text, todos, setTodos, todo, status }) => {
         >
           {text}
         </label>
-        <span className="material-icons text-right" onClick={deleteHandler}>
+        {/* {status === "Completed" ? <trashButton /> : ""} */}
+        <span className="material-icons float-right" onClick={deleteHandler}>
           {status === "Completed" ? "delete" : ""}
         </span>
       </div>

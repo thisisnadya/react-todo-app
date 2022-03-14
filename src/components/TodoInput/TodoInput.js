@@ -34,7 +34,7 @@ const TodoInput = ({
     <div>
       <div>
         <ul
-          className="filters d-flex justify-content-evenly mt-4"
+          className="filters d-flex justify-content-between mt-4"
           onClick={statusHandler}
         >
           {["All", "Active", "Completed"].map((key) => (
@@ -45,10 +45,13 @@ const TodoInput = ({
         </ul>
       </div>
       <hr />
-      <form className="d-flex justify-content-between" onSubmit={submitHandler}>
+      <form
+        className="d-flex justify-content-around text-center mt-4"
+        onSubmit={submitHandler}
+      >
         <input
           type="text"
-          className="form-control input p-3"
+          className="form-control input p-4"
           placeholder="add details"
           value={todoInput}
           onChange={inputHandler}
